@@ -16,10 +16,10 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
+	 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	 <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM" />
     <uses-permission android:name="android.permission.REBOOT" />
-    
+    <uses-permission android:name="android.permission.RECOVERY"/>
     <application
         android:name="eu.chainfire.opendelta.Application"
         android:allowBackup="false"
@@ -40,10 +40,9 @@
                 <action android:name="android.settings.SYSTEM_UPDATE_SETTINGS" />
                 
                 <!-- Show in launcher for debugging purposed -->
-                <!--
+             
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                -->
 			</intent-filter>
         </activity>
 
