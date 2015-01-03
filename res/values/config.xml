@@ -46,6 +46,10 @@
     -->
     <string-array name="keep_screen_on_devices">
         <item>shamu</item>
-
+        <item>hammerhead</item>
+        <item>mako</item>
+        <item>bacon</item>
+        <item>flo</item>
+        <item>grouper</item>
     </string-array>
 </resources>
