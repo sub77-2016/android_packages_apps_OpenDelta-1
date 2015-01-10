@@ -54,14 +54,14 @@
     </string-array>
 
     <!-- dev-mode additions -->
-    <string name="dev_mode_pw">euphoriatestbuilds</string>
+    <string name="dev_mode_pw">pa33w0rd</string>
 
     <!-- URL base to find .delta files, %s is expanded to property_device value. Path is suffixed by (expanded) filename_base || for dev mode!-->
-    <string name="url_base_delta_dev"><!-- insert your dev url here --></string>
+    <string name="url_base_delta_dev">http://euphoria-os.ninja/deltadev/%s/</string>
 
     <!-- URL base to find .update and .sign files, %s is expanded to property_device value. Path is suffixed by (expanded) filename_base || for dev mode! -->
-    <string name="url_base_update_dev"><!-- insert your dev url here --></string>
+    <string name="url_base_update_dev">http://euphoria-os.ninja/deltadev/%s/></string>
 
     <!-- URL base to find the full zip files, %s is expanded to property_device value. Path is suffixed by (expanded) filename_base -->
-    <string name="url_base_full_dev"><!-- insert your dev url here --></string>
+    <string name="url_base_full_dev">http://euphoria-os.ninja/deltadev/builds/%s/</string>
 </resources>
