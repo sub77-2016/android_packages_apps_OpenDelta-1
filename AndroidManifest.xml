@@ -29,8 +29,7 @@
         
         <activity
             android:name="eu.chainfire.opendelta.MainActivity"
-            android:label="@string/title"
-            android:launchMode="singleTask"> 
+            android:label="@string/title"> 
             <intent-filter android:priority="2147483647" >
                 <!-- 
                 	Show up under Settings, About Device, System Updates. 
