@@ -60,7 +60,7 @@
     <string name="url_base_delta_dev">http://euphoria-os.ninja/deltadev/%s/</string>
 
     <!-- URL base to find .update and .sign files, %s is expanded to property_device value. Path is suffixed by (expanded) filename_base || for dev mode! -->
-    <string name="url_base_update_dev">http://euphoria-os.ninja/deltadev/%s/></string>
+    <string name="url_base_update_dev">http://euphoria-os.ninja/deltadev/%s/</string>
 
     <!-- URL base to find the full zip files, %s is expanded to property_device value. Path is suffixed by (expanded) filename_base -->
     <string name="url_base_full_dev">http://euphoria-os.ninja/deltadev/builds/%s/</string>
