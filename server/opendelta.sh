@@ -17,15 +17,15 @@ fi
 
 # ------ CONFIGURATION ------
 
-HOME=/home/build
+HOME=/root
 
 BIN_JAVA=java
-BIN_MINSIGNAPK=$HOME/delta/minsignapk.jar
-BIN_XDELTA=$HOME/delta/xdelta3
-BIN_ZIPADJUST=$HOME/delta/zipadjust
+BIN_MINSIGNAPK=$HOME/deltatools/minsignapk.jar
+BIN_XDELTA=$HOME/deltatools/xdelta3
+BIN_ZIPADJUST=$HOME/deltatools/zipadjust
 
-FILE_MATCH=omni-*.zip
-PATH_CURRENT=$HOME/omni/out/target/product/$DEVICE
+FILE_MATCH=Phantom-*.zip
+PATH_CURRENT=$HOME/phantom/out/target/product/$DEVICE
 PATH_LAST=$HOME/delta/last/$DEVICE
 
 KEY_X509=$HOME/.keys/platform.x509.pem
@@ -90,8 +90,8 @@ mkdir out
 
 $BIN_ZIPADJUST --decompress $PATH_CURRENT/$FILE_CURRENT work/current.zip
 $BIN_ZIPADJUST --decompress $PATH_LAST/$FILE_LAST work/last.zip
-$BIN_JAVA -Xmx1024m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/current.zip work/current_signed.zip
-$BIN_JAVA -Xmx1024m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/last.zip work/last_signed.zip
+$BIN_JAVA -Xmx2048m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/current.zip work/current_signed.zip
+$BIN_JAVA -Xmx2048m -jar $BIN_MINSIGNAPK $KEY_X509 $KEY_PK8 work/last.zip work/last_signed.zip
 SRC_BUFF=$(nextPowerOf2 $(getFileSize work/current.zip));
 $BIN_XDELTA -B ${SRC_BUFF} -9evfS none -s work/last.zip work/current.zip out/$FILE_LAST_BASE.update
 SRC_BUFF=$(nextPowerOf2 $(getFileSize work/current_signed.zip));
@@ -124,7 +124,7 @@ echo "      \"name\": \"$FILE_LAST\"," >> $DELTA
 echo "      \"size_store\": $SIZE_LAST_STORE," >> $DELTA
 echo "      \"size_store_signed\": $SIZE_LAST_STORE_SIGNED," >> $DELTA
 echo "      \"size_official\": $SIZE_LAST," >> $DELTA
-echo "      \"md5_store\": \"$MD5_LAST_STORE\"," >> $DELTA
+echo "      \"md5_store\": \"$MD5_CURRENT_STORE\"," >> $DELTA
 echo "      \"md5_store_signed\": \"$MD5_LAST_STORE_SIGNED\"," >> $DELTA
 echo "      \"md5_official\": \"$MD5_LAST\"" >> $DELTA
 echo "  }," >> $DELTA
